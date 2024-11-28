@@ -27,6 +27,7 @@
               <td>{{$w->Oppervlakte}} </td>
               <td>{{$w->PrijsPerWeek}}</td>
               <td>{{$w->updated_at}}</td>
+              
           </tr>
           @endforeach
       </tbody>

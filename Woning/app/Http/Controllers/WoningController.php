@@ -13,9 +13,10 @@ class WoningController extends Controller
     public function index()
     {
         $woning =  Woning::all();
-            
+
         return view('woning.index', compact('woning')); // -> resources/views/stocks/index.blade.php 
     }
+    
 
     /**
      * Show the form for creating a new resource.
