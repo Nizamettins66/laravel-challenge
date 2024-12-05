@@ -64,24 +64,41 @@ class WoningController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $woning = woning::find($id);
+        return view('woning.edit',['woning'=>$woning]);  // -> resources/views/woning/edit.blade.php
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        // Validation for required fields (and using some regex to validate our numeric value)
+        $request->validate([
+            'titel'=>'required',
+            'oppervlakte'=>'required',
+            'prijsperweek'=>'required|max:10|regex:/^-?[0-9]+(?:\.[0-9]{1,2})?$/'
+        ]); 
+        $woning = Woning::find($id);
+        // Getting values from the blade template form
+        $woning->titel =  $request->get('titel');
+        $woning->oppervlakte = $request->get('oppervlakte');
+        $woning->prijsperweek = $request->get('prijsperweek');
+        $woning->save();
+    
+        return redirect('/woning'); // -> resources/views/woning/index.blade.php
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
-    }
+        $woning = Woning::find($id);
+        $woning->delete(); // Easy right?
+    
+        return redirect('/woning');  // -> resources/views/stocks/index.blade.php
+    } 
 }
