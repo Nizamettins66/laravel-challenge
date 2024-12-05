@@ -23,7 +23,7 @@ class WoningController extends Controller
      */
     public function create()
     {
-        //
+        return view('woning.create'); // -> resources/views/woning/create.blade.php
     }
 
     /**
@@ -31,8 +31,27 @@ class WoningController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validatie van de invoervelden
+        $request->validate([
+            'titel' => 'required|string|max:255',
+            'oppervlakte' => 'required|numeric|min:0',
+            'prijsperweek' => 'required|numeric|min:0|max:999999.99'
+        ]);
+    //  dd($request);
+        // Creëren van een nieuwe Woning
+        $woning = new Woning();
+        $woning->titel = $request->get('titel');
+        $woning->oppervlakte = $request->get('oppervlakte');
+        $woning->prijsperweek = $request->get('prijsperweek');
+        $woning->save();
+
+        // dd($woning);
+    
+        $woning->save();
+    
+        return redirect('/woning')->with('success', 'Woning succesvol opgeslagen.');
     }
+    
 
     /**
      * Display the specified resource.

@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('woning', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('Titel');
-            $table->string('Oppervlakte');
-            $table->decimal('PrijsPerWeek', 8, 2);
+            $table->string('titel');
+            $table->string('oppervlakte');
+            $table->decimal('prijsPerWeek', 8, 2);
             $table->timestamps();
         });
     
