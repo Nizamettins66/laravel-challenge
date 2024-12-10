@@ -1,4 +1,4 @@
-
+@extends('woning/base')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +11,7 @@
 <body>
   <div class="container" style="margin:40px;">
 
-  <h1 class="display-3">Woningen</h1>
+  <h1 class="display-3"> Nieuwe Woningen</h1>
 
     <form method="post" action="/woning/store">
           @csrf

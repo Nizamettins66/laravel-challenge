@@ -1,3 +1,4 @@
+@extends('woning/base')
 <!DOCTYPE html>
 <html lang="en">
 <head>
