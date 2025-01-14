@@ -34,6 +34,7 @@ class WoningController extends Controller
         // Validatie van de invoervelden
         $request->validate([
             'titel' => 'required|string|max:255',
+            'omschrijving' => 'required|string|max:99999',
             'oppervlakte' => 'required|numeric|min:0',
             'prijsperweek' => 'required|numeric|min:0|max:999999.99'
         ]);
@@ -41,6 +42,7 @@ class WoningController extends Controller
         // Creëren van een nieuwe Woning
         $woning = new Woning();
         $woning->titel = $request->get('titel');
+        $woning->omschrijving = $request->get('omschrijving');
         $woning->oppervlakte = $request->get('oppervlakte');
         $woning->prijsperweek = $request->get('prijsperweek');
         $woning->save();
@@ -78,12 +80,13 @@ class WoningController extends Controller
         // Validation for required fields (and using some regex to validate our numeric value)
         $request->validate([
             'titel'=>'required',
+            'omschrijving'=>'required',
             'oppervlakte'=>'required',
             'prijsperweek'=>'required|max:10|regex:/^-?[0-9]+(?:\.[0-9]{1,2})?$/'
         ]); 
         $woning = Woning::find($id);
-        // Getting values from the blade template form
         $woning->titel =  $request->get('titel');
+        $woning->omschrijving = $request->get('omschrijving');
         $woning->oppervlakte = $request->get('oppervlakte');
         $woning->prijsperweek = $request->get('prijsperweek');
         $woning->save();
