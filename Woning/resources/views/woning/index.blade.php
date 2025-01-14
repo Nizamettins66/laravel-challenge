@@ -17,7 +17,7 @@
       <th>Updated at</th>
       <th>Update</th>
       <th>Delete</th>
-      <th>Bekijk</th>
+      <th>Show</th>
     </tr>
   </thead>
   <tbody>
@@ -37,6 +37,7 @@
           <button onclick="return confirm('Are you sure?')" class="btn btn-danger" type="submit">Delete</button>
         </form>
       </td>
+      <td><a href="/woning/show/{{$w->id}}" class="btn btn-success">Bekijk</a></td>
     </tr>
     @endforeach
     <td></td>

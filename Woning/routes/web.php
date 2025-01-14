@@ -33,6 +33,8 @@ Route::get('woning/edit/{id}',   [App\Http\Controllers\WoningController::class, 
 Route::post('woning/update/{id}',   [App\Http\Controllers\WoningController::class, 'update']);
 
 Route::post('woning/destroy/{id}',  [App\Http\Controllers\WoningController::class, 'destroy']);
+
+Route::get('woning/show/{id}', [App\Http\Controllers\WoningController::class, 'show'])->name('woning.show');
 });
 
 require __DIR__.'/auth.php';

@@ -58,9 +58,13 @@ class WoningController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        // Zoek de woning op basis van het ID
+        $woning = Woning::findOrFail($id);
+    
+        // Retourneer de "bekijk"-view met de woninggegevens
+        return view('woning.show', compact('woning'));
     }
 
     /**
