@@ -67,6 +67,14 @@ Dit project is gebouwd met de volgende technologieën:
 - [MySQL](https://www.mysql.com/) - Relationele database
 - [Tailwind CSS](https://tailwindcss.com/) - Styling framework
 
+
+## 💾 Backup maken
+Via de console kun je een backup maken.
+
+   ```bash
+   php artisan backup:run
+   ```
+
 ## 📄 Licentie
 Dit project is gelicenseerd onder de MIT-licentie. Zie het [LICENSE](LICENSE) bestand voor details.
 
