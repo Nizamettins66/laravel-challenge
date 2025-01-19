@@ -11,37 +11,42 @@
 </head>
 
 <body>
-    <div class="container" style="margin:40px;">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h1 class="display-4 text-center mb-4">Woning Bewerken</h1>
 
-        <h1 class="display-3">Woning bewerken</h1>
+                        <form method="post" action="/woning/update/{{$woning->id}}">
+                            @csrf
+                            <div class="form-group">
+                                <label for="titel">Titel<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" name="titel" value="{{ $woning->titel }}" placeholder="Vul de titel in" />
+                            </div>
 
-        <form method="post" action="/woning/update/{{$woning->id}}">
-            @csrf
-            <div class="form-group">
+                            <div class="form-group">
+                                <label for="omschrijving">Omschrijving<span class="text-danger">*</span></label>
+                                <textarea class="form-control" name="omschrijving" rows="3" placeholder="Geef een omschrijving">{{ $woning->omschrijving }}</textarea>
+                            </div>
 
-                <label for="titel">titel:*</label>
-                <input type="text" class="form-control" name="titel" value="{{ $woning->titel }}" />
+                            <div class="form-group">
+                                <label for="oppervlakte">Oppervlakte (m²)<span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" name="oppervlakte" value="{{ $woning->oppervlakte }}" placeholder="Bijv. 100" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="prijsperweek">Prijs per week (€)</label>
+                                <input type="number" step="0.01" class="form-control" name="prijsperweek" value="{{ $woning->prijsperweek }}" placeholder="Bijv. 200" />
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">Update</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-
-                <label for="titel">omschrijving:*</label>
-                <input type="text" class="form-control" name="omschrijving" value="{{ $woning->omschrijving }}" />
-            </div>
-
-            <div class="form-group">
-                <label for="oppervlakte">oppervlakte:*</label>
-                <input type="text" class="form-control" name="oppervlakte" value="{{ $woning->oppervlakte }}" />
-            </div>
-
-            <div class="form-group">
-                <label for="value">prijsperweek:</label>
-                <input type="text" class="form-control" name="prijsperweek" value="{{ $woning->prijsperweek }}" />
-            </div>
-            <button type="submit" class="btn btn-primary">Update</button>
-        </form>
-
+        </div>
     </div>
 
-</body>
-
-</html>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   
