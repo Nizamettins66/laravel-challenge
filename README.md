@@ -89,8 +89,8 @@ Contributies zijn welkom! Volg deze stappen om bij te dragen:
 ## 🤝 Contact
 Heb je vragen of feedback? Neem contact met mij op:
 
-- **Email**: jouw-email@example.com
-- **GitHub**: [jouw-gebruikersnaam](https://github.com/jouw-gebruikersnaam)
+- **Email**: Nizamettinsari29@gmail.com 
+- **GitHub**: [Nizamettins66](https://github.com/Nizamettins66)
 
 ---
 Dank je wel dat je gebruik maakt van dit platform! 😊
